@@ -1,0 +1,50 @@
+{
+  "name": "@discord-factory/factory",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Baptiste Parmantier <baptiste.parmantier.pro@gmail.com>",
+  "license": "MIT",
+  "repository": "git@github.com:DiscordFactory/Core.git",
+  "keywords": [],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "dev": "cross-env NODE_ENV=development nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node index.ts\"",
+    "start": "cross-env NODE_ENV=production node ./",
+    "build": "tsc",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "ava"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.6.2",
+    "@antfu/ni": "^0.5.5",
+    "@types/node": "^14.14.37",
+    "ava": "^3.15.0",
+    "bumpp": "^6.0.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.23.0",
+    "eslint-plugin-ava": "^12.0.0",
+    "esno": "^0.5.0",
+    "git-ensure": "^0.1.0",
+    "tsup": "^4.8.21",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "fs-recursive": "^1.0.3",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "files": [
+      "test/**/*.spec.ts"
+    ],
+    "verbose": true
+  }
+}
