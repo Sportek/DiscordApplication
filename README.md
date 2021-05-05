@@ -1,4 +1,4 @@
-# @DiscordFactory/Core
+# @DiscordFactory/Factory
 
 ## License
 
