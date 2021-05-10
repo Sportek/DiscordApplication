@@ -7,8 +7,8 @@
   "repository": "git@github.com:DiscordFactory/Core.git",
   "keywords": [],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only --clear --rs -- ./index.ts",
-    "start": "cross-env NODE_ENV=production node ./build/index.js",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only --clear --rs -- start/index.ts",
+    "start": "cross-env NODE_ENV=production node ./build/start/index.js",
     "build": "tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "discord.js": "^12.5.3",
-    "fs-recursive": "^1.0.3",
+    "module-alias": "^2.2.2",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1"
   },
@@ -46,5 +46,8 @@
       "test/**/*.spec.ts"
     ],
     "verbose": true
+  },
+  "_moduleAliases": {
+    "App": "./build/src"
   }
 }

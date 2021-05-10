@@ -12,8 +12,11 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "experimentalDecorators": true,
+    "paths": {
+      "App/*": ["src/*"]
+    },
   },
-  "include": ["**/*"],
+  "include": ["src/**/*", "start/**/*"],
   "exclude": [
     "build",
     "test"
