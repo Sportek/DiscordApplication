@@ -16,7 +16,7 @@
       "App/*": ["src/*"]
     },
   },
-  "include": ["src/**/*", "start/**/*"],
+  "include": ["src/**/*", "providers/**/*","start/**/*"],
   "exclude": [
     "build",
     "test"
