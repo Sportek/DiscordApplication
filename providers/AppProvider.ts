@@ -13,5 +13,6 @@ export default class AppProvider implements Provider {
 
   public async ready(): Promise<void> {
     // Your code here
+
   }
 }

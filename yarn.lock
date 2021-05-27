@@ -52,7 +52,7 @@
     "@antfu/eslint-config-react" "^0.6.5"
     "@antfu/eslint-config-vue" "^0.6.5"
 
-"@antfu/ni@^0.5.5":
+"@antfu/ni@^0.5.6":
   version "0.5.9"
   resolved "https://registry.yarnpkg.com/@antfu/ni/-/ni-0.5.9.tgz#f0b3f9cb90bb9197995ad7b4594db9085bb6c590"
   integrity sha512-FSrcy0l8KeXu9WtsFC8j5KrziEyy4Ikz2cA+F1+H/8WMqhrcl7qr1e78jNQCPjuDrlsufbU8vrDTZH5pTs+wzQ==
@@ -271,20 +271,23 @@
   dependencies:
     arrify "^1.0.1"
 
-"@discord-factory/core@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@discord-factory/core/-/core-0.1.3.tgz#6c57969eca0c2a8169ef561aa1a5f29f08d51d68"
-  integrity sha512-JysF3VcFl/SpdrXUdT+KHZViQYmVLPBULt8iMioEz9q70Ix/oWYmf6wuO2H2D+4ONvyJTkkFsWbuBmJz46KU3A==
+"@discord-factory/core@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@discord-factory/core/-/core-0.2.0.tgz#31ba0ab7c54811fbbd77ebec5946879573f5924b"
+  integrity sha512-d37x1r5TeZb4719m1p2LVSTchZg98D/1DuXNXEJ1xayWqX7f0BbB7UMObogF1B9dTrIq9P/431g4a3QEuIK2XQ==
   dependencies:
     "@discord-factory/env" "^0.0.0"
     "@types/mock-fs" "^4.13.0"
     cross-env "^7.0.3"
     discord.js "^12.5.3"
-    fs-recursive "^1.0.3"
+    dotenv "^10.0.0"
+    fs-recursive "^1.0.6"
+    js-yaml "^4.1.0"
     mock-fs "^4.14.0"
     module-alias "^2.2.2"
     nodemon "^2.0.7"
     ts-node "^9.1.1"
+    yaml "^1.10.2"
 
 "@discord-factory/env@^0.0.0":
   version "0.0.0"
@@ -403,11 +406,16 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "15.6.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.0.tgz#f0ddca5a61e52627c9dcb771a6039d44694597bc"
-  integrity sha512-gCYSfQpy+LYhOFTKAeE8BkyGqaxmlFxe+n4DKM6DR0wzw/HISUE/hAmkC/KT8Sw5PCJblqg062b3z9gucv3k0A==
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.1.tgz#32d43390d5c62c5b6ec486a9bc9c59544de39a08"
+  integrity sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA==
 
-"@types/node@^14.14.32", "@types/node@^14.14.37":
+"@types/node@^14.14.32":
+  version "14.17.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.1.tgz#5e07e0cb2ff793aa7a1b41deae76221e6166049f"
+  integrity sha512-/tpUyFD7meeooTRwl3sYlihx2BrJE7q9XF71EguPFIySj9B7qgnRtHsHTho+0AUm4m1SvWGm6uSncrR94q6Vtw==
+
+"@types/node@^14.14.37":
   version "14.17.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.0.tgz#3ba770047723b3eeb8dc9fca02cce8a7fb6378da"
   integrity sha512-w8VZUN/f7SSbvVReb9SWp6cJFevxb4/nkG65yLAya//98WgocKm5PLDAtSs5CtJJJM+kHmJjO/6mmYW4MHShZA==
@@ -639,6 +647,11 @@ argparse@^1.0.7:
   integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   dependencies:
     sprintf-js "~1.0.2"
+
+argparse@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
+  integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
 
 array-back@^3.0.1:
   version "3.1.0"
@@ -1434,6 +1447,11 @@ dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
+
 dotenv@^9.0.0:
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.2.tgz#dacc20160935a37dea6364aa1bef819fb9b6ab05"
@@ -2039,10 +2057,10 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
-fs-recursive@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/fs-recursive/-/fs-recursive-1.0.3.tgz#ea397048e0be62398682b9a042545459a1e252b0"
-  integrity sha512-fNriBKsgifA42QlHdq4qmQDpd25QR+8jl+76U3k3Iw1puHT+yV696WpSgd16xECVCw/O/RC01OkXJ3z8QZLEBg==
+fs-recursive@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/fs-recursive/-/fs-recursive-1.0.6.tgz#69fff21673ea8cc9630223415bb189b686f8c416"
+  integrity sha512-dASSYmMuDi9hIZOgKyxY8wg8pG1NkMPHuRSu8iFAY2rrI7kIS1ibN6sSlaji6iVwkiJ26zsJQ/76T91BrA860A==
   dependencies:
     "@types/node" "^14.14.32"
     "@types/uuid" "^8.3.0"
@@ -2657,6 +2675,13 @@ js-yaml@^3.13.1, js-yaml@^3.14.0:
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
+
+js-yaml@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.1.0.tgz#c1fb65f8f5017901cdd2c951864ba18458a10602"
+  integrity sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==
+  dependencies:
+    argparse "^2.0.1"
 
 jsesc@^2.5.1:
   version "2.5.2"
@@ -4596,7 +4621,7 @@ yaml-eslint-parser@^0.3.2:
     lodash "^4.17.20"
     yaml "^1.10.0"
 
-yaml@^1.10.0:
+yaml@^1.10.0, yaml@^1.10.2:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==

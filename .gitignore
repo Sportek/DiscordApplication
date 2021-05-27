@@ -59,8 +59,11 @@ src/typing/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# environment variables file
 .env
+environment.json
+environment.yaml
+environment.yml
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
