@@ -271,10 +271,10 @@
   dependencies:
     arrify "^1.0.1"
 
-"@discord-factory/core@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@discord-factory/core/-/core-0.2.0.tgz#31ba0ab7c54811fbbd77ebec5946879573f5924b"
-  integrity sha512-d37x1r5TeZb4719m1p2LVSTchZg98D/1DuXNXEJ1xayWqX7f0BbB7UMObogF1B9dTrIq9P/431g4a3QEuIK2XQ==
+"@discord-factory/core@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@discord-factory/core/-/core-0.4.1.tgz#41599e83038e16781009a08d8ae469752e54491c"
+  integrity sha512-8NDWgkC/Rb+7QzBehDg0vDKCkxRqkxeaomcmJqZrV2Y+CKrc3ru1pWUffS4ACsuoU3i7unxhcxsSHakgNo7n+A==
   dependencies:
     "@discord-factory/env" "^0.0.0"
     "@types/mock-fs" "^4.13.0"
