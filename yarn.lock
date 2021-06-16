@@ -271,17 +271,17 @@
   dependencies:
     arrify "^1.0.1"
 
-"@discord-factory/core@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@discord-factory/core/-/core-0.4.1.tgz#41599e83038e16781009a08d8ae469752e54491c"
-  integrity sha512-8NDWgkC/Rb+7QzBehDg0vDKCkxRqkxeaomcmJqZrV2Y+CKrc3ru1pWUffS4ACsuoU3i7unxhcxsSHakgNo7n+A==
+"@discord-factory/core@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@discord-factory/core/-/core-0.7.0.tgz#e3f2a2a6c740d65fbc44caeffb919e5b8225691a"
+  integrity sha512-HUApNv01/Kh9j9aTO2Z5rQuzvosKSMcuvM7V6OBRcjb8JVAMZNZ8p/kLKNFGKzfHIDNODXdSbpjodfN2xNHDPQ==
   dependencies:
     "@discord-factory/env" "^0.0.0"
     "@types/mock-fs" "^4.13.0"
     cross-env "^7.0.3"
     discord.js "^12.5.3"
     dotenv "^10.0.0"
-    fs-recursive "^1.0.6"
+    fs-recursive "1.1.0"
     js-yaml "^4.1.0"
     mock-fs "^4.14.0"
     module-alias "^2.2.2"
@@ -2057,10 +2057,10 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
-fs-recursive@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/fs-recursive/-/fs-recursive-1.0.6.tgz#69fff21673ea8cc9630223415bb189b686f8c416"
-  integrity sha512-dASSYmMuDi9hIZOgKyxY8wg8pG1NkMPHuRSu8iFAY2rrI7kIS1ibN6sSlaji6iVwkiJ26zsJQ/76T91BrA860A==
+fs-recursive@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/fs-recursive/-/fs-recursive-1.1.0.tgz#3c63323237c3c2b632c20075a5a1b69a510224c3"
+  integrity sha512-3xMz4vNh35QabXwpjSPKDNuM+O2FRSjQ9ZIpojvYB+TMrlgCVv4bfQkZehUrhKXUnF8mY3rXwFATqW46tZS2UA==
   dependencies:
     "@types/node" "^14.14.32"
     "@types/uuid" "^8.3.0"
