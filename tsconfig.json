@@ -15,7 +15,7 @@
     "emitDecoratorMetadata": true,
     "paths": {
       "App/*": ["src/*"]
-    },
+    }
   },
   "include": ["src/**/*", "providers/**/*","start/**/*"],
   "exclude": [
