@@ -1,4 +1,4 @@
-import 'module-alias/register'
-import { Factory } from '@discord-factory/core'
+import { Ignitor } from '@discord-factory/core-next'
 
-Factory.getInstance().setup()
+const ignitor = new Ignitor()
+ignitor.createFactory()

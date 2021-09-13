@@ -1,17 +1,18 @@
-import { Context, Provider } from '@discord-factory/core'
-import Motd from '@discord-factory/motd'
+import { BaseProvider, EntityResolvable } from 'ioc:factory/Core/Provider'
+import Logger from '@leadcodedev/logger'
 
-export default class AppProvider implements Provider {
-  public async boot(): Promise<void> {
+export default class AppProvider implements BaseProvider {
+  public async boot (): Promise<void> {
     // Your code here
-    await new Motd().start()
+    Logger.send('info', 'Application start')
   }
 
-  public async loadFile(context: Context): Promise<void> {
+  public async load (Class: EntityResolvable): Promise<void> {
     // Your code here
+    Logger.send('info', `Load file ${Class.file?.path}`)
   }
 
-  public async ready(): Promise<void> {
-    // Your code here
+  public async ok (): Promise<void> {
+    Logger.send('info', 'Application is ready')
   }
 }
