@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --quiet --transpile-only --clear --rs -- start/index.ts",
     "start": "cross-env NODE_ENV=production node ./build/start/index.js",
-    "ace": "ts-node-dev --quiet -- ace.ts",
+    "ace": "ts-node-dev --quiet --transpile-only -- ace.ts",
     "build": "tsc",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
@@ -26,7 +26,8 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "@discord-factory/core-next": "^1.0.0",
+    "@discord-factory/basic-commands": "^1.2.0",
+    "@discord-factory/core-next": "^1.1.5",
     "@leadcodedev/logger": "^1.0.0",
     "discord.js": "13.1.0",
     "module-alias": "^2.2.2"

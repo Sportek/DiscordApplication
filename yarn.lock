@@ -37,10 +37,32 @@
   dependencies:
     arrify "^1.0.1"
 
-"@discord-factory/core-next@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@discord-factory/core-next/-/core-next-1.0.0.tgz#f356d8fb7da7d841e6c83457fe4b5a895ffa0361"
-  integrity sha512-KlZAAob4yJQSXV10kynju8E4jqc4dbARfh8LxFQAJ5BZO5Jaz+65NxezxqS2PLjx+xInHgTANWFFtCOd0Q1rNQ==
+"@discord-factory/basic-commands@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@discord-factory/basic-commands/-/basic-commands-1.2.0.tgz#966d651efd7743d0086aaf892cee20cdf62326f7"
+  integrity sha512-xC4Dt6LNVjFUUP25U3tgOq/+YG1X+/Qiw3lPrOYUCm7quXZb696cV+O9JyRKHBqgVDwn3bIHm03p7Udmxtg0dw==
+  dependencies:
+    "@discord-factory/core-next" "^1.1.6"
+    "@leadcodedev/logger" "^1.0.0"
+    discord.js "^13.1.0"
+    fs-recursive "^1.1.7"
+
+"@discord-factory/core-next@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@discord-factory/core-next/-/core-next-1.1.5.tgz#e3921a46f8df3101c28b1a778956450e7cfa9818"
+  integrity sha512-dHUEmafi6FGcoO0hYKv7LsfRz0ouyM+AhR0CTrBEgTYkOo3AwKOxkdvEBPr7/A/o8aRr4xcOyghOOpAOgF1/Nw==
+  dependencies:
+    "@leadcodedev/logger" "^1.0.0"
+    cross-env "^7.0.3"
+    discord.js "^13.1.0"
+    fs-recursive "^1.1.7"
+    js-yaml "^4.1.0"
+    module-alias "^2.2.2"
+
+"@discord-factory/core-next@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@discord-factory/core-next/-/core-next-1.1.6.tgz#ccb79e1df27e2cd7337fc7440d633a640343216e"
+  integrity sha512-fyXEjLTLN2YFKIvoqb4udAy/6rqfohaB7kZndVqlBdDkgTU87xNetJCJlUaz90YcNBNIMrLQ7e41mwvlYITSiQ==
   dependencies:
     "@leadcodedev/logger" "^1.0.0"
     cross-env "^7.0.3"
