@@ -1,8 +1,9 @@
 declare module 'ioc:factory/Core' {
-  import { Ignitor, Factory } from '@discord-factory/core-next'
+  import { Ignitor, Factory, Application } from '@discord-factory/core-next'
   export {
     Ignitor,
     Factory,
+    Application,
   }
 }
 
