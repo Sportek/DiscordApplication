@@ -50,7 +50,3 @@ declare module 'ioc:factory/Core/Hook' {
     Hook,
   }
 }
-
-declare module 'ioc:factory/Discord/Event' {
-  export * from 'discord.js'
-}
