@@ -36,10 +36,18 @@ declare module 'ioc:factory/Core/Event' {
 }
 
 declare module 'ioc:factory/Core/Command' {
-  import { Command, BaseCommand } from '@discord-factory/core-next'
+  import { BaseCommand, Command } from '@discord-factory/core-next'
   export {
     BaseCommand,
     Command,
+  }
+}
+
+declare module 'ioc:factory/Core/ContextMenu' {
+  import { BaseContextMenu, ContextMenu } from '@discord-factory/core-next'
+  export {
+    BaseContextMenu,
+    ContextMenu,
   }
 }
 

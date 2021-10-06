@@ -46,10 +46,10 @@
   dependencies:
     arrify "^1.0.1"
 
-"@discord-factory/core-commands@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@discord-factory/core-commands/-/core-commands-1.0.0.tgz#6337d04a0e3e9e5e2e5544db31600dc640572691"
-  integrity sha512-rvDxtetszU/17hBJ9+do4pYTUtClwHaGZw65p52Pjp5Y17qHwd6Hic0hwDPFnciWELThJylNiw0gTUSvqevSiQ==
+"@discord-factory/core-commands@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@discord-factory/core-commands/-/core-commands-1.2.0.tgz#34a3532f22349f714b680dea8f21d6782f46e65c"
+  integrity sha512-9seO0hvqq75yNXz+fP1rW54A4S/I0PVHnL1c758jQYgs1jf5mwY8hwNhHKw9stmBD6ITegDq7S2yB+CONguaLA==
   dependencies:
     "@discord-factory/core-next" "^1.3.0"
     "@leadcodedev/logger" "^1.0.0"
@@ -86,6 +86,21 @@
     fs-recursive "^1.1.7"
     js-yaml "^4.1.0"
     module-alias "^2.2.2"
+
+"@discord-factory/core-next@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@discord-factory/core-next/-/core-next-1.7.0.tgz#b486b6fb5c946ca13e04ef78a9a47cbd0e38684d"
+  integrity sha512-/S9WdEx9B3cpvt3xcJUV57wfmeD1ZNPi9IFJVdY4MYuZuhF1xlcsbZmJm7ErV+3UxIhF0vhJuU0NBjAYisIgXw==
+  dependencies:
+    "@babel/eslint-parser" "^7.15.4"
+    "@discord-factory/core-next" "^1.4.1"
+    "@leadcodedev/logger" "^1.0.0"
+    "@typescript-eslint/eslint-plugin" "^4.31.1"
+    "@typescript-eslint/parser" "^4.31.1"
+    cross-env "^7.0.3"
+    discord.js "^13.1.0"
+    fs-recursive "^1.1.7"
+    js-yaml "^4.1.0"
 
 "@discordjs/builders@^0.5.0":
   version "0.5.0"
