@@ -1,0 +1,16 @@
+{
+  "instance": {
+    "version": "4.0"
+  },
+  "defaultEmbed": {
+    "color": "invisible",
+    "footer": "Hyperion © 2021"
+  },
+  "guild": {
+    "id": "877248862161604728",
+    "roles": {
+      "administration": ["877249042600587315"],
+      "moderation": ["877249078868709406"]
+    }
+  }
+}
