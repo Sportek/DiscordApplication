@@ -1,16 +1,28 @@
 {
-  "instance": {
-    "version": "4.0"
-  },
-  "defaultEmbed": {
-    "color": "invisible",
-    "footer": "Hyperion © 2021"
-  },
-  "guild": {
-    "id": "877248862161604728",
-    "roles": {
-      "administration": ["877249042600587315"],
-      "moderation": ["877249078868709406"]
+    "suggestions": {
+        "channel": "922282365596889187"
+    },
+    "memberCount": {
+        "channel": "922301728639053824",
+        "message": "╔══\uD83D\uDCCA | Membres: {memberCount} ══╗"
+    },
+    "instance": {
+        "version": "1.0"
+    },
+    "defaultEmbed": {
+        "color": "invisible",
+        "footer": "Nefarion © 2022"
+    },
+    "guild": {
+        "id": "922282364976115732",
+        "roles": {
+            "administration": [
+                "923050345498820639"
+            ],
+            "moderation": [
+                "923050345498820639",
+                "922282364976115733"
+            ]
+        }
     }
-  }
 }

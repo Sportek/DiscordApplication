@@ -1,10 +1,19 @@
-import { ButtonInteraction, CommandInteraction, ContextMenuInteraction, MessageEmbed } from "discord.js";
+import {
+  ButtonInteraction,
+  CommandInteraction,
+  ContextMenuInteraction,
+  GuildMember,
+  MessageEmbed,
+  MessageOptions,
+  MessagePayload
+} from "discord.js";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import { Application } from "@sportek/core-next-sportek";
 import { Colors } from "@discord-factory/colorize";
 import { MessageConfigure } from "App/defaults/MessageConfigure";
+import Logger from "@leadcodedev/logger";
 
-type EmbedType = "Utilitaires" | "Tickets" | "Invitations" | "Sanctions" | "Giveaways" | "Confirmation" | "Niveaux"
+type EmbedType = "Utilitaires" | "Tickets" | "Invitations" | "Sanctions" | "Giveaways" | "Confirmation" | "Niveaux" | "Vocaux temporaires"
 
 export function getDefaultEmbed(utility: EmbedType) {
   const embed = new MessageEmbed();
@@ -13,6 +22,25 @@ export function getDefaultEmbed(utility: EmbedType) {
   embed.setColor(getColors())
   embed.setFooter(`${ ConfigManager.getBaseConfiguration().defaultEmbed.footer } • ${ utility }`, Application.getClient()!.user?.avatarURL()!);
   return embed;
+}
+
+export async function sendPrivateConfirmation(member : GuildMember, message: string, status: boolean) {
+  return sendPrivateMessage(member, {embeds: [getConfirmationEmbed(status).setDescription(message)]})
+}
+
+export async function sendPrivateMessage(member: GuildMember, message: string | MessagePayload | MessageOptions) {
+  try {
+    const channel = await member.createDM(true);
+    await channel.send(message);
+  } catch (e) {
+    Logger.send("error", `Impossible d'envoyer des messages privés à ${ member.displayName }.`);
+  }
+}
+
+function getConfirmationEmbed(status: boolean) {
+  return getDefaultEmbed("Confirmation")
+    .setAuthor(status ? "Succès" : "Commande incorrecte", status ? "https://cdn.discordapp.com/emojis/821329948634644481.png?size=128" : "https://cdn.discordapp.com/emojis/821329948903997440.png?size=128")
+    .setColor(status ? "#43B581" : "#F04747");
 }
 
 export function getColors() {
@@ -27,7 +55,7 @@ export async function sendEphemeralMessage(interaction: CommandInteraction | But
   }
 
   const embed = getDefaultEmbed("Confirmation")
-    .setAuthor(status ? "Succès": "Commande incorrecte", status? "https://cdn.discordapp.com/emojis/821329948634644481.png?size=128": "https://cdn.discordapp.com/emojis/821329948903997440.png?size=128")
+    .setAuthor(status ? "Succès" : "Commande incorrecte", status ? "https://cdn.discordapp.com/emojis/821329948634644481.png?size=128" : "https://cdn.discordapp.com/emojis/821329948903997440.png?size=128")
     .setDescription(message);
   status ? embed.setColor("#43B581") : embed.setColor("#F04747");
   await interaction.reply({embeds: [embed], ephemeral: true});

@@ -1,0 +1,7 @@
+{
+    "memberLeave": "",
+    "memberJoin": "Bienvenue **{playerUsername}** sur Nefarion :tada:\nPasse un bon moment en compagnie des **{memberCount}** membres du serveur.\n➜ Si vous souhaitez contacter un membre de notre équipe, vous pouvez créer un ticket dans <#922282365844340832>",
+    "channelid": "923050685514268732",
+    "defaultRole": "922282364976115736",
+    "logInvite": "922282365236150300"
+}

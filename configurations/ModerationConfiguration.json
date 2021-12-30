@@ -1,0 +1,33 @@
+{
+    "mutedRole": "922282364976115735",
+    "lockMuted": [
+        "922282364976115732"
+    ],
+    "channelModerationLogs": "922282365009674285",
+    "staffUpdater": {
+        "headstaff": [
+            "922282365009674282",
+            "922282365009674281",
+            "922282365009674280",
+            "922282364997079049"
+        ],
+        "staff": [
+            "922282364997079048",
+            "922282364997079047",
+            "922282364997079046"
+        ]
+    },
+    "automaticSanctions": {
+        "maxWarnings": "3",
+        "noLinks": {
+            "enable": false,
+            "allowedLinks": []
+        },
+        "spamTagWave": {
+            "enable": true
+        },
+        "ghostTags": {
+            "enable": true
+        }
+    }
+}

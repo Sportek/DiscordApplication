@@ -1,6 +1,13 @@
 import {ColorResolvable, Snowflake} from "discord.js";
 
 export interface InterfaceBaseConfiguration {
+    suggestions: {
+        channel: Snowflake
+    }
+    memberCount: {
+        channel: Snowflake
+        message: string
+    }
     instance: {
         version: string
     }
