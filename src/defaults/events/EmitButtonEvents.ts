@@ -1,6 +1,6 @@
-import { Event, BaseEvent } from 'ioc:factory/Core/Event'
-import {ButtonInteraction, Interaction} from 'discord.js'
-import {Application} from "@sportek/core-next-sportek";
+import { BaseEvent, Event } from 'ioc:factory/Core/Event'
+import { Interaction } from 'discord.js'
+import { Application } from "@sportek/core-next-sportek";
 
 @Event('interactionCreate')
 export default class EmitButtonEvents extends BaseEvent {
@@ -9,5 +9,6 @@ export default class EmitButtonEvents extends BaseEvent {
     Application.getClient().emit(`buttonInteraction::${interaction.customId}`, {
       buttonInteraction: interaction
     })
+
   }
 }

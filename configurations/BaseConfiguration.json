@@ -1,19 +1,26 @@
 {
+    "suggestions": {
+        "channel": "926884076428877874"
+    },
+    "memberCount": {
+        "channel": "926884034473242684",
+        "message": "\uD83D\uDCCA | Membres: {memberCount}"
+    },
     "instance": {
         "version": "1.0"
     },
     "defaultEmbed": {
-        "color": "invisible",
-        "footer": "Fabrique © 2022"
+        "color": "#E5224C",
+        "footer": "CandyFight © 2022"
     },
     "guild": {
-        "id": "926334516241518652",
+        "id": "926639649735188492",
         "roles": {
             "administration": [
-                "926505412654678048"
+                "926639912495755374"
             ],
             "moderation": [
-                "926509011006799924"
+                "926639929335894067"
             ]
         }
     }

@@ -4,6 +4,9 @@ export interface InterfaceModerationConfiguration {
   mutedRole: Snowflake
   lockMuted: Snowflake[]
   channelModerationLogs: Snowflake
+  limitMessagePerMinute: number
+
+  notRestrictedChannels: Snowflake[]
 
   automaticSanctions: {
     maxWarnings: number,

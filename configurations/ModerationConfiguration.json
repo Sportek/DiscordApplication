@@ -1,17 +1,17 @@
 {
-    "mutedRole": "926507184697782304",
+    "mutedRole": "926639976677003355",
     "lockMuted": [
-        "926334516241518652"
+        "926639649735188492"
     ],
-    "channelModerationLogs": "926507129085526017",
+    "notRestrictedChannels": [],
+    "limitMessagePerMinute": 10,
+    "channelModerationLogs": "926643618310160405",
     "staffUpdater": {
         "headstaff": [
-            "926505412654678048",
-            "926334863089479721"
+            "926639912495755374"
         ],
         "staff": [
-            "926334886275604521",
-            "926334916185194566"
+            "926639929335894067"
         ]
     },
     "automaticSanctions": {

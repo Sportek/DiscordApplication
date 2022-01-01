@@ -13,7 +13,7 @@ import { Colors } from "@discord-factory/colorize";
 import { MessageConfigure } from "App/defaults/MessageConfigure";
 import Logger from "@leadcodedev/logger";
 
-type EmbedType = "Utilitaires" | "Tickets" | "Invitations" | "Sanctions" | "Giveaways" | "Confirmation" | "Niveaux" | "Vocaux temporaires"
+type EmbedType = "Utilitaires" | "Tickets" | "Invitations" | "Sanctions" | "Giveaways" | "Confirmation" | "Niveaux" | "Vocaux temporaires" | "Captcha"
 
 export function getDefaultEmbed(utility: EmbedType) {
   const embed = new MessageEmbed();
@@ -59,4 +59,13 @@ export async function sendEphemeralMessage(interaction: CommandInteraction | But
     .setDescription(message);
   status ? embed.setColor("#43B581") : embed.setColor("#F04747");
   await interaction.reply({embeds: [embed], ephemeral: true});
+}
+
+export async function sendDeferredMessage(interaction: CommandInteraction | ButtonInteraction | ContextMenuInteraction, message: string, status: boolean) {
+
+  const embed = getDefaultEmbed("Confirmation")
+    .setAuthor(status ? "Succès" : "Commande incorrecte", status ? "https://cdn.discordapp.com/emojis/821329948634644481.png?size=128" : "https://cdn.discordapp.com/emojis/821329948903997440.png?size=128")
+    .setDescription(message);
+  status ? embed.setColor("#43B581") : embed.setColor("#F04747");
+  await interaction.editReply({embeds: [embed]});
 }

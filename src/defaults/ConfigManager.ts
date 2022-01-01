@@ -4,6 +4,7 @@ import ModerationConfiguration from "../../configurations/ModerationConfiguratio
 import TicketConfiguration from "../../configurations/TicketConfiguration.json"
 import RankingConfiguration from "../../configurations/RankingConfiguration.json"
 import TemporaryChannelConfiguration from "../../configurations/TemporaryChannelConfiguration.json"
+import SecurityConfiguration from "../../configurations/SecurityConfiguration.json"
 
 import { InterfaceInvitesConfiguration } from "App/defaults/interfaces/InterfaceInvitesConfiguration";
 import { InterfaceModerationConfiguration } from "App/defaults/interfaces/InterfaceModerationConfiguration";
@@ -11,12 +12,15 @@ import { InterfaceTicketConfiguration } from "App/defaults/interfaces/InterfaceT
 import { InterfaceBaseConfiguration } from "App/defaults/interfaces/InterfaceBaseConfiguration";
 import { InterfaceRankingConfiguration } from "App/defaults/interfaces/InterfaceRankingConfiguration";
 import { InterfaceTemporaryChannelConfiguration } from "App/defaults/interfaces/InterfaceTemporaryChannelConfiguration";
+import { InterfaceSecurityConfiguration } from "App/defaults/interfaces/InterfaceSecurityConfiguration";
 
 export class ConfigManager {
   // @ts-ignore
   private static baseConfiguration: InterfaceBaseConfiguration = BaseConfiguration
 
   private static temporaryChannelConfiguration: InterfaceTemporaryChannelConfiguration = TemporaryChannelConfiguration
+
+  private static securityConfiguration: InterfaceSecurityConfiguration = SecurityConfiguration
 
   // @ts-ignore
   private static invitesConfiguration: InterfaceInvitesConfiguration = InvitesConfiguration
@@ -29,6 +33,10 @@ export class ConfigManager {
 
   public static getBaseConfiguration() {
     return this.baseConfiguration
+  }
+
+  public static getSecurityConfiguration(){
+    return this.securityConfiguration
   }
 
   public static getRankingConfiguration(){
