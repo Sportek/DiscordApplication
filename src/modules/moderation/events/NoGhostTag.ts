@@ -7,7 +7,7 @@ import { WarningCollection } from "App/modules/moderation/collections/WarningCol
 @Event('messageCreate')
 export default class NoGhostTag implements BaseEvent {
 	public async run(message: Message): Promise<void> {
-		if(!ConfigManager.getModerationConfiguration().automaticSanctions.noGhostTag) return;
+		if(!ConfigManager.getModerationConfiguration().automaticSanctions.ghostTags.enable) return;
 		if(message.channel.type === "DM") return;
 		if(!message.mentions.users.first()) return;
 		if(message.author.bot) return;

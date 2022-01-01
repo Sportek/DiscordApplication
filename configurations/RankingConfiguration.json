@@ -1,11 +1,11 @@
 {
     "nitroBoost": {
-        "activate": false,
-        "roleid": "593113838162018307",
+        "activate": true,
+        "roleid": "926483814979620864",
         "boost": 0.10
     },
     "rewards": [{
         "level": 1,
-        "roleid": "926146481130450984"
+        "roleid": "926489371014733855"
     }]
 }

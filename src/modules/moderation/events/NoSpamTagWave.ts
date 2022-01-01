@@ -7,7 +7,7 @@ import { ConfigManager } from "App/defaults/ConfigManager";
 @Event('messageCreate')
 export default class NoSpamTagWave implements BaseEvent {
   public async run(message: Message): Promise<void> {
-    if(ConfigManager.getModerationConfiguration().automaticSanctions.spamTagWave) {
+    if(ConfigManager.getModerationConfiguration().automaticSanctions.spamTagWave.enable) {
       if(message.channel.type === "DM") return;
       if(message.author.bot) return;
       const member = message.member!;

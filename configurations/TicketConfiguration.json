@@ -1,9 +1,9 @@
 {
   "ticketSetup": {
     "title": "🏷️ Système de Support",
-    "description": "**Un quelconque problème?**\nRéagis avec l'émoji qui correspond à ton besoin.\n\n`\uD83C\uDFAE` **Problème en jeu**\n`\uD83D\uDC8E` **Problème boutique**\n`\uD83D\uDCBC` **Demande de Partenariat**\n`\uD83D\uDD0E` **Autres problèmes**"
+    "description": "Bonjour et bienvenue sur le système de ticket de la Fabrique à Robot! Vous pouvez créer un ticket en appuyant sur un bouton ci-dessous, un membre du support se fera un plaisir de répondre à vos questions.\n\n`\uD83C\uDFAE` **Problème en jeu**\n`\uD83D\uDC8E` **Problème boutique**\n`\uD83D\uDCBC` **Demande de Partenariat**\n`\uD83D\uDD0E` **Autres problèmes**"
   },
-  "ticketLogsChannel": "926149985765056512",
+  "ticketLogsChannel": "926341909788635138",
   "ticketTypes": [
     {
       "name": "Jeu",
@@ -11,7 +11,7 @@
       "tag": "GAME",
       "categorie": 0,
       "supports": [
-        "926139885339934760"
+        "926334916185194566"
       ],
       "tagSupports": true,
       "firstMessage": {
@@ -23,7 +23,7 @@
       "name": "Boutique",
       "emoji": "\uD83D\uDCBC",
       "tag": "SHOP",
-      "categorie": 0,
+      "categorie": 1,
       "supports": [],
       "tagSupports": true,
       "firstMessage": {
@@ -35,7 +35,7 @@
       "name": "Partenariat",
       "emoji": "\uD83C\uDFA5",
       "tag": "YT",
-      "categorie": 0,
+      "categorie": 1,
       "supports": [],
       "tagSupports": true,
       "firstMessage": {
@@ -59,6 +59,7 @@
     }
   ],
   "categories": [
-    "926142851371384843"
+    "926335709751693312",
+    "926335693108690994"
   ]
 }

@@ -7,8 +7,8 @@ export class UpdateStaffMessage {
 
     public async updateMessage(guild: Guild) {
         let number = 0;
-        let headstaff = "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n<:ban:654095902532829194> **Administration**\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬";
-        let staff = "\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n<:pardon:654096604755787796> **Modération**\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬";
+        let headstaff = "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n👑 **Administration**\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬";
+        let staff = "\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n🏹 **Modération**\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬";
 
 
         const first = await userList(guild, "headstaff");
@@ -26,7 +26,7 @@ export class UpdateStaffMessage {
         return getDefaultEmbed("Utilitaires")
             .setTitle(`Liste du staff de ${guild.name} 📋`)
             .setDescription(`${headstaff}${staff}`)
-            .addField("Informations", `**Membres de l'équipe:** ${number} 👥\n**Recrutement:** [<a:greenok:670776890167918654>]\n**Dernière actualisation:** ${convertTimestampToDate(Date.now())} ⏱️`);
+            .addField("Informations", `**Membres de l'équipe:** ${number} 👥\n**Recrutement:** [✅]\n**Dernière actualisation:** ${convertTimestampToDate(Date.now())} ⏱️`);
     }
 }
 

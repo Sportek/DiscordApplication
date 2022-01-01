@@ -14,7 +14,7 @@ export interface InterfaceModerationConfiguration {
     spamTagWave: {
       enable: boolean
     }
-    noGhostTag:{
+    ghostTags:{
       enable: boolean
     }
   }

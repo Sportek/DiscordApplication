@@ -3,17 +3,17 @@
         "version": "1.0"
     },
     "defaultEmbed": {
-        "color": "#CF6E42",
-        "footer": "Vunelia © 2022"
+        "color": "invisible",
+        "footer": "Fabrique © 2022"
     },
     "guild": {
-        "id": "926138143663607808",
+        "id": "926334516241518652",
         "roles": {
             "administration": [
-                "926139854599888917"
+                "926505412654678048"
             ],
             "moderation": [
-                "926139885339934760"
+                "926509011006799924"
             ]
         }
     }

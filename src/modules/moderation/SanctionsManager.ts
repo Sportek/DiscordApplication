@@ -109,7 +109,7 @@ export class SanctionsManager {
         switch (sanction) {
             case "ban":
                 sanction = "ban"
-                this.getInteraction().guild?.bans.create(this._member, {days: 1, reason: `Hyperion: ${this._reason}`});
+                this.getInteraction().guild?.bans.create(this._member, {days: 1, reason: `${Application.getClient().user!.username}: ${this._reason}`});
                 // @ts-ignore
                 await sendEphemeralMessage(this.getInteraction(), `Vous avez bannis avec succès ${this.getMember()} (${this.getMember().id}) pour une durée de ${DurationsEnum[test]}.`, true);
                 break;

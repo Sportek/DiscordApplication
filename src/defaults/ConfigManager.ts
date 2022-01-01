@@ -3,16 +3,20 @@ import InvitesConfiguration from "../../configurations/InvitesConfiguration.json
 import ModerationConfiguration from "../../configurations/ModerationConfiguration.json"
 import TicketConfiguration from "../../configurations/TicketConfiguration.json"
 import RankingConfiguration from "../../configurations/RankingConfiguration.json"
+import TemporaryChannelConfiguration from "../../configurations/TemporaryChannelConfiguration.json"
 
 import { InterfaceInvitesConfiguration } from "App/defaults/interfaces/InterfaceInvitesConfiguration";
 import { InterfaceModerationConfiguration } from "App/defaults/interfaces/InterfaceModerationConfiguration";
 import { InterfaceTicketConfiguration } from "App/defaults/interfaces/InterfaceTicketConfiguration";
 import { InterfaceBaseConfiguration } from "App/defaults/interfaces/InterfaceBaseConfiguration";
 import { InterfaceRankingConfiguration } from "App/defaults/interfaces/InterfaceRankingConfiguration";
+import { InterfaceTemporaryChannelConfiguration } from "App/defaults/interfaces/InterfaceTemporaryChannelConfiguration";
 
 export class ConfigManager {
   // @ts-ignore
   private static baseConfiguration: InterfaceBaseConfiguration = BaseConfiguration
+
+  private static temporaryChannelConfiguration: InterfaceTemporaryChannelConfiguration = TemporaryChannelConfiguration
 
   // @ts-ignore
   private static invitesConfiguration: InterfaceInvitesConfiguration = InvitesConfiguration
@@ -29,6 +33,10 @@ export class ConfigManager {
 
   public static getRankingConfiguration(){
     return this.rankingConfiguration
+  }
+
+  public static getTemporaryChannelConfiguration(){
+    return this.temporaryChannelConfiguration
   }
 
   public static getInvitesConfiguration() {

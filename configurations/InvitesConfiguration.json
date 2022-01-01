@@ -1,5 +1,5 @@
 {
-    "memberJoin": "Bienvenue **{playerUsername}** sur Vunelia :tada:\nPasse un bon moment en compagnie des **{memberCount}** membres du serveur.",
-    "channelid": "926140565081436160",
-    "defaultRole": "926140604063285318"
+    "memberJoin": "Bienvenue **{playerUsername}** sur la Fabrique à Robot :tada:\nPasse un bon moment en compagnie des **{memberCount}** membres du serveur.",
+    "channelid": "926507129085526017",
+    "defaultRole": "926507670305910814"
 }
