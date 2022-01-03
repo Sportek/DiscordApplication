@@ -24,7 +24,7 @@ export class SpamWaveManager {
       for (const value of editChannels) {
         const channel = await Application.getClient().channels.fetch(value.channelid) as TextChannel;
         let newTimeIndex = this.time.indexOf(channel.rateLimitPerUser) - 1
-        if(newTimeIndex == 0) {
+        if(newTimeIndex <= 0) {
           Logger.send('success', `Retour à la normal dans le salon ${ channel.name }, le slowmode a donc été désactivé.`)
           await channel.edit({rateLimitPerUser: this.time[newTimeIndex]})
           this.getChannelInfo(value.channelid)
@@ -37,7 +37,7 @@ export class SpamWaveManager {
 
       this.channelsInfo.forEach(value => this.setMessage(value.channelid));
 
-    }, 10 * 1000)
+    }, 60 * 1000)
   }
 
   public getChannelInfo(channelid: Snowflake) {

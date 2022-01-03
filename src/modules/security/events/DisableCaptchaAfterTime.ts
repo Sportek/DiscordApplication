@@ -5,6 +5,7 @@ import { GuildMember, TextChannel } from "discord.js";
 import { Application } from "@sportek/core-next-sportek";
 import Logger from "@leadcodedev/logger";
 import { getDefaultEmbed } from "App/defaults/MessageManager";
+import fs from "fs";
 
 // @ts-ignore
 @Event('fullReady')
@@ -37,6 +38,9 @@ export default class DisableCaptchaAfterTime extends BaseEvent {
                 .setDescription(`${ member } (${ member.displayName }) a été expulsé, il n'a pas rempli le captcha dans les temps.`)
               await logChannel.send({embeds: [embed]})
             }
+
+            fs.rmSync(`./security/${ value.userid }.png`);
+
           } catch (e) {
             Logger.send("error", `Une erreur est survenue lors d'un captcha: ${ e }`)
           }

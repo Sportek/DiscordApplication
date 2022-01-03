@@ -5,9 +5,7 @@ export interface InterfaceModerationConfiguration {
   lockMuted: Snowflake[]
   channelModerationLogs: Snowflake
   limitMessagePerMinute: number
-
   notRestrictedChannels: Snowflake[]
-
   automaticSanctions: {
     maxWarnings: number,
     noLinks: {
@@ -21,7 +19,6 @@ export interface InterfaceModerationConfiguration {
       enable: boolean
     }
   }
-
   staffUpdater: {
     headstaff: Snowflake[]
     staff: Snowflake[]

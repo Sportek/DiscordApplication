@@ -1,6 +1,5 @@
 import { createCanvas } from "canvas";
 import fs from "fs";
-import { getFonts } from "font-list";
 import { getRandomNumberBetweenTwoNotFloored } from "App/defaults/MathUtils";
 import {
   GuildMember,
