@@ -4,7 +4,7 @@ import { ConfigManager } from "App/defaults/ConfigManager";
 import { getCommandPermission } from "App/defaults/PermissionManager";
 import SanctionSave from "App/modules/moderation/database/models/SanctionSave";
 import { getDefaultEmbed, sendEphemeralMessage } from "App/defaults/MessageManager";
-import { DurationsEnum } from "App/modules/moderation/enums/DurationsEnum";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 @Command({
   scope: [ConfigManager.getBaseConfiguration().guild.id],
@@ -62,7 +62,7 @@ export default class Warn implements BaseCommand {
         \`📌\` **WarnID:** ${number}
         \`📌\` **Raison:** ${reason}`);
 
-    const moderatorLogger = await Application.getClient()?.channels.fetch(ConfigManager.getModerationConfiguration().channelModerationLogs) as unknown as TextChannel
+    const moderatorLogger = await Application.getClient()?.channels.fetch(Moderation.getConfiguration().channelModerationLogs) as unknown as TextChannel
     await moderatorLogger.send({embeds:[embed]});
 
   }

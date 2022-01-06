@@ -2,12 +2,13 @@ import { Message } from "discord.js";
 import { BaseEvent, Event } from "@sportek/core-next-sportek";
 import { WarningCollection } from "App/modules/moderation/collections/WarningCollection";
 import { ConfigManager } from "App/defaults/ConfigManager";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 
 @Event('messageCreate')
 export default class NoSpamTagWave implements BaseEvent {
   public async run(message: Message): Promise<void> {
-    if(ConfigManager.getModerationConfiguration().automaticSanctions.spamTagWave.enable) {
+    if(Moderation.getConfiguration().automaticSanctions.spamTagWave.enable) {
       if(message.channel.type === "DM") return;
       if(message.author.bot) return;
       const member = message.member!;

@@ -1,7 +1,7 @@
 import { Guild } from "discord.js";
 import { getDefaultEmbed } from "App/defaults/MessageManager";
-import { ConfigManager } from "App/defaults/ConfigManager";
 import { convertTimestampToDate } from "App/defaults/TimeManager";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 export class UpdateStaffMessage {
 
@@ -34,7 +34,7 @@ async function userList(guild: Guild, type: string) {
 
     let string = "";
     let number = 0;
-    for (const value of ConfigManager.getModerationConfiguration().staffUpdater[type]) {
+    for (const value of Moderation.getConfiguration().staffUpdater[type]) {
         const members = await guild.members.fetch();
         const role = await guild.roles.fetch(value);
         const collectionMembers = members.filter(value1 => value1.roles.cache.has(value));

@@ -3,7 +3,6 @@ import { BaseCommand, Command } from "@sportek/core-next-sportek";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import { getTopInviteEmbed } from "App/modules/invites/GetTopEmbed";
 
-
 @Command({
   scope: [ConfigManager.getBaseConfiguration().guild.id],
   options: {

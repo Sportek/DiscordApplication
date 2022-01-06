@@ -2,15 +2,16 @@ import { Message } from "discord.js";
 import { BaseEvent, Event } from "@sportek/core-next-sportek";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import { WarningCollection } from "App/modules/moderation/collections/WarningCollection";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 @Event('messageCreate')
 export default class NoLinks implements BaseEvent {
   public async run(message: Message): Promise<void> {
 
-    if(ConfigManager.getModerationConfiguration().automaticSanctions.noLinks.enable) {
+    if(Moderation.getConfiguration().automaticSanctions.noLinks.enable) {
 
       const messageContent = message.content;
-      const allowedLink = ConfigManager.getModerationConfiguration().automaticSanctions.noLinks.allowedLinks
+      const allowedLink = Moderation.getConfiguration().automaticSanctions.noLinks.allowedLinks
       const member = message.member!;
 
       const part = messageContent.split(" ");

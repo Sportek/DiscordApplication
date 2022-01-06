@@ -2,6 +2,7 @@ import { Application, BaseEvent, Event } from "@sportek/core-next-sportek";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import Logger from "@leadcodedev/logger";
 import SanctionnedList from "App/modules/moderation/database/models/SanctionnedList";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 
 // @ts-ignore
@@ -14,7 +15,7 @@ export default class SanctionRemover implements BaseEvent {
 				if (!(value.debandate < Date.now())) continue;
 				const guild = Application.getClient()!.guilds.resolve(ConfigManager.getBaseConfiguration().guild.id);
 				const member = guild!.members.resolve(value.playerid);
-				const muteRole = guild!.roles.resolve(ConfigManager.getModerationConfiguration().mutedRole);
+				const muteRole = guild!.roles.resolve(Moderation.getConfiguration().mutedRole);
 				if (!member) continue;
 				if (!muteRole) continue;
 				if (!guild) continue;

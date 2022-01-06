@@ -4,6 +4,7 @@ import { ConfigManager } from "App/defaults/ConfigManager";
 import { getCommandPermission } from "App/defaults/PermissionManager";
 import { getDefaultEmbed } from "App/defaults/MessageManager";
 import Logger from "@leadcodedev/logger";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 @Command({
   scope: [ConfigManager.getBaseConfiguration().guild.id],
@@ -20,7 +21,7 @@ export default class Lock extends BaseCommand {
 
     try{
       const channel = interaction.channel! as GuildChannel;
-      const roles = ConfigManager.getModerationConfiguration().lockMuted
+      const roles = Moderation.getConfiguration().lockMuted
       for (const value of roles) {
         await channel.permissionOverwrites.edit(value, {"SEND_MESSAGES": true})
       }

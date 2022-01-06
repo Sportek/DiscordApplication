@@ -4,6 +4,7 @@ import { ConfigManager } from "App/defaults/ConfigManager";
 import { Player } from "App/modules/ranking/Player";
 import { getNumberToLimit } from "App/defaults/MathUtils";
 import { getDefaultEmbed } from "App/defaults/MessageManager";
+import { Ranking } from "App/modules/ranking/Ranking";
 
 
 @Command({
@@ -41,7 +42,7 @@ export default class PlayerProfil implements BaseCommand {
 
         const embed = getDefaultEmbed("Utilitaires")
             .setDescription(`
-        ${ConfigManager.getRankingConfiguration().nitroBoost.activate ? member.roles.cache.has(ConfigManager.getRankingConfiguration().nitroBoost.roleid) ?  `<:nitro:895366665339019335> Nitro: **+${ConfigManager.getRankingConfiguration().nitroBoost.boost * 100}%** d'expérience`: "" : ""}
+        ${Ranking.getConfiguration().nitroBoost.activate ? member.roles.cache.has(Ranking.getConfiguration().nitroBoost.roleid) ?  `<:nitro:895366665339019335> Nitro: **+${Ranking.getConfiguration().nitroBoost.boost * 100}%** d'expérience`: "" : ""}
             
         **Niveau**: ${level}
         ${progressiveBar} ${remainExp}/${neededExp}`)

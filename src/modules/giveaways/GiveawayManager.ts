@@ -8,7 +8,7 @@ import {
   Snowflake,
   TextChannel
 } from "discord.js";
-import { Giveaway } from "App/modules/giveaways/Giveaway";
+import { GiveawayObject } from "App/modules/giveaways/GiveawayObject";
 import Logger from "@leadcodedev/logger";
 import { Application } from "@sportek/core-next-sportek";
 import { getDefaultEmbed, sendEphemeralMessage } from "App/defaults/MessageManager";
@@ -36,14 +36,9 @@ export class GiveawayManager {
     return getDefaultEmbed("Giveaways")
       .setTitle("GIVEAWAY")
       .setDescription(`\`\`\`Prix: ${ rewardFormated } \`\`\`\n**Informations:**\nCréateur: ${ await Application.getClient().users.fetch(data.creator) }\nFin: <t:${ data.duration }:R>\nNombre de gagnants: ${ data.winnercount }\nNombre de participant(s): ${ participants }\n${ (data.level || data.invite) ? `\n**Requis:**\n ${ data.invite ? `\n\`🔖\` Nombre d'invitation(s) minimal: **${ data.invite }**` : "" }` : "" }\n**Comment participer?**\nPour participer, vous devez appuyez sur le bouton et ne pas quitter le discord avant la fin du giveaway.`);
-
-
-    // const test = getDefaultEmbed("Giveaways")
-    //   .setTitle("GIVEAWAY")
-    //   .setDescription(`\`\`\`Prix: ${ rewardFormated } \`\`\`\n**Informations:**\nCréateur: <@${ giveaway.creator }>\n\nNombre de gagnants: ${ giveaway.winnercount }\nFin: <t:${ giveaway.duration }:R>Nombre de participant(s): 0\n${ (giveaway.level || giveaway.invite) ? `\n**Requis:**\n ${ giveaway.level ? `\n\`🎮\` Niveau(x) minimum: **${ giveaway.level }**` : "" }${ giveaway.invite ? `\n\`🔖\` Nombre d'invitation(s) minimal: **${ giveaway.invite }**` : "" }` : "" }\n\n**Gagnants:**\n${ winnerString }`)
   }
 
-  public async createGiveaway(giveaway: Giveaway) {
+  public async createGiveaway(giveaway: GiveawayObject) {
     const data = await GiveawayData.create({
       creator: giveaway.creator,
       duration: giveaway.duration,
@@ -178,7 +173,7 @@ export class GiveawayManager {
     const button = new MessageActionRow()
       .addComponents(new MessageButton()
         .setStyle("DANGER")
-        .setLabel("Giveaway terminé")
+        .setLabel("GiveawayObject terminé")
         .setDisabled(true)
         .setEmoji("⚠")
         .setCustomId("entendGiveaway"))

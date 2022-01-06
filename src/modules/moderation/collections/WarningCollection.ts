@@ -3,13 +3,14 @@ import { getDefaultEmbed } from "App/defaults/MessageManager";
 import { AutomaticSanctionManager } from "App/modules/moderation/AutomaticSanctionManager";
 import { DurationsEnum } from "App/modules/moderation/enums/DurationsEnum";
 import { ConfigManager } from "App/defaults/ConfigManager";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 type WarningsType = "Link"|"Trop de mentions"|"Ghost ping"
 
 export class WarningCollection {
     private static $instance: WarningCollection;
     private warnings: Collection<Snowflake, number> = new Collection<Snowflake, number>();
-    private _maxWarnings: number = ConfigManager.getModerationConfiguration().automaticSanctions.maxWarnings
+    private _maxWarnings: number = Moderation.getConfiguration().automaticSanctions.maxWarnings
 
     public static getInstance() {
         if (!this.$instance) {
@@ -28,7 +29,7 @@ export class WarningCollection {
 
         if (warnings! < maxWarnings) {
             const embed = getDefaultEmbed("Sanctions")
-                .setDescription(`${member}, vous venez de recevoir un avertissement. Des sanctions peuvent être enclanchée en cas de trop grand nombre d'avertissements. Il est interdit de: \n\n**- Mentionner plus de ${ConfigManager.getModerationConfiguration().automaticSanctions.maxWarnings} personnes dans un même message.\n- Mentionner un utilisateur et ensuite supprimer la mention.**\n\n📌 Raison de l'avertissement: ${type}.\n📌 Votre nombre d'avertissements: ${warnings}. \n📌 Nombre maximum d'avertissement avant sanction: ${maxWarnings}.`)
+                .setDescription(`${member}, vous venez de recevoir un avertissement. Des sanctions peuvent être enclanchée en cas de trop grand nombre d'avertissements. Il est interdit de: \n\n**- Mentionner plus de ${Moderation.getConfiguration().automaticSanctions.maxWarnings} personnes dans un même message.\n- Mentionner un utilisateur et ensuite supprimer la mention.**\n\n📌 Raison de l'avertissement: ${type}.\n📌 Votre nombre d'avertissements: ${warnings}. \n📌 Nombre maximum d'avertissement avant sanction: ${maxWarnings}.`)
             message.channel.send({embeds: [embed]});
             return;
         }

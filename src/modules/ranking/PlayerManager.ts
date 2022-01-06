@@ -2,6 +2,7 @@ import { GuildMember } from "discord.js";
 import { LimiteExperienceCollection } from "App/modules/ranking/Collections/LimiteExperienceCollection";
 import { Player } from "App/modules/ranking/Player";
 import { ConfigManager } from "App/defaults/ConfigManager";
+import { Ranking } from "App/modules/ranking/Ranking";
 
 export class PlayerManager {
 
@@ -15,13 +16,13 @@ export class PlayerManager {
     }
 
     public async increasePlayerExperience(guildMember: GuildMember) {
-        const booster = 1 + ConfigManager.getRankingConfiguration().nitroBoost.boost;
+        const booster = 1 + Ranking.getConfiguration().nitroBoost.boost;
         const limiteExperienceInstance = LimiteExperienceCollection.getInstance();
         let lastTimestamp = limiteExperienceInstance.getLimiteExperience(guildMember.id);
         if(lastTimestamp && lastTimestamp > Date.now()) return;
         const player = await new Player(guildMember.id).initialize();
         const defaultExp = PlayerManager.generateRandomNumber()
-        const exp = Math.floor(defaultExp * (guildMember.roles.cache.has(ConfigManager.getRankingConfiguration().nitroBoost.roleid) ? booster : 1))
+        const exp = Math.floor(defaultExp * (guildMember.roles.cache.has(Ranking.getConfiguration().nitroBoost.roleid) ? booster : 1))
         await player.incrementExperienceNumber(exp)
         limiteExperienceInstance.setLimiteExperience(guildMember.id)
         /*

@@ -24,13 +24,10 @@ export async function getTopInviteEmbed() {
         number = i;
         break;
     }
-
     message += `\n${ number }** ${ (await Application.getClient()!.users.fetch(value.userid)).username }** - **${ value.invitecount }** invitations`;
-
     i++;
   }
 
   return getDefaultEmbed("Invitations")
     .setDescription(message);
-
 }

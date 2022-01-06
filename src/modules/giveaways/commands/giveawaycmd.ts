@@ -3,7 +3,7 @@ import { Application, BaseCommand, Command } from "@sportek/core-next-sportek";
 import { getCommandPermission } from "App/defaults/PermissionManager";
 import { GiveawayManager } from "App/modules/giveaways/GiveawayManager";
 import { getDefaultEmbed, sendEphemeralMessage } from "App/defaults/MessageManager";
-import { Giveaway } from "App/modules/giveaways/Giveaway";
+import { GiveawayObject } from "App/modules/giveaways/GiveawayObject";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import { getRandomInt } from "App/defaults/MathUtils";
 import Logger from "@leadcodedev/logger";
@@ -134,7 +134,7 @@ export default class Giveawaycmd extends BaseCommand {
           .setStyle("SUCCESS"))
 
       const message = await interaction.channel!.send({embeds: [embed], components: [button]});
-      const giveaway = new Giveaway(message, rewards, winners, endTimestamp, interaction.user.id, invite, null);
+      const giveaway = new GiveawayObject(message, rewards, winners, endTimestamp, interaction.user.id, invite, null);
       await GiveawayManager.getInstance().createGiveaway(giveaway)
       await sendEphemeralMessage(interaction, "Le giveaway a bien été lancé.", true);
     }
@@ -186,7 +186,7 @@ export default class Giveawaycmd extends BaseCommand {
 
       }
 
-      console.log("Winners: " + winners)
+      Logger.send('success', `Gagnants du giveaway ${message.id}: ${winners.join(", ")}`);
 
       const embed = getDefaultEmbed("Giveaways")
         .setTitle(`GIVEAWAY`)

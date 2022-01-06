@@ -5,6 +5,7 @@ import { DurationsEnum } from "App/modules/moderation/enums/DurationsEnum";
 import { Application } from "@sportek/core-next-sportek";
 import SanctionnedList from "App/modules/moderation/database/models/SanctionnedList";
 import SanctionSave from "App/modules/moderation/database/models/SanctionSave";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 type Sanctions = "BAN" | "TEMPBAN" | "MUTE" | "TEMPMUTE";
 type sanctionType = "ban"|"mute"|"kick"|"warn";
@@ -67,7 +68,7 @@ export class SanctionsManager {
             debandate: Date.now() + this.getDuration(),
         })
 
-        const moderatorLogger = await Application.getClient()?.channels.fetch(ConfigManager.getModerationConfiguration().channelModerationLogs) as unknown as TextChannel
+        const moderatorLogger = await Application.getClient()?.channels.fetch(Moderation.getConfiguration().channelModerationLogs) as unknown as TextChannel
 
         const embed = getDefaultEmbed("Sanctions")
             .setAuthor(this._moderator.user.username, this._moderator.user.avatarURL()!)
@@ -116,7 +117,7 @@ export class SanctionsManager {
             case "mute":
                 try {
                     sanction = "mute"
-                    await this._member.roles.add(ConfigManager.getModerationConfiguration().mutedRole)
+                    await this._member.roles.add(Moderation.getConfiguration().mutedRole)
                     // @ts-ignore
                     await sendEphemeralMessage(this.getInteraction(), `Vous avez réduit au silence avec succès ${this.getMember()} (${this.getMember().id}) pour une durée de ${DurationsEnum[test]}.`, true)
                 } catch (e) {

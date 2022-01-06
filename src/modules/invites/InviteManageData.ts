@@ -1,11 +1,9 @@
-import { GuildMember, Snowflake, User } from "discord.js";
+import { Snowflake, User } from "discord.js";
 import InvitesData from "App/modules/invites/database/models/InvitesData";
 import { getDefaultEmbed } from "App/defaults/MessageManager";
 
 export class InviteManageData {
-
   private static $instance: InviteManageData;
-
   public static getInstance() {
     if(!this.$instance) {
       this.$instance = new InviteManageData();
@@ -20,7 +18,6 @@ export class InviteManageData {
       .setColor(type ? "#43B581" : "#F04747")
       .setDescription(`\`🍂\` Pseudonyme: ${member} (${member.tag})\n\`📆\`Création du compte: <t:${Math.floor(member.createdAt.getTime()/1000)}:D> (<t:${Math.floor(member.createdAt.getTime()/1000)}:R>)\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\`🍁\` Invité par: ${inviter} (${inviter instanceof User ? inviter.tag : inviter})\n\`📆\` Création du compte: <t:${inviter instanceof User ? Math.floor(inviter.createdAt.getTime()/1000) : inviter}:D> (<t:${inviter instanceof User ? Math.floor(inviter.createdAt.getTime()/1000) : inviter}:R>)`)
   }
-
 
   public async getPlayerDataCreateIfNull(userID: Snowflake, inviterID: Snowflake = "aucun") {
     const data = await InvitesData.findBy({userid: userID}) as InvitesData

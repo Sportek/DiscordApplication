@@ -5,10 +5,7 @@ import { Application } from "@sportek/core-next-sportek";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import SanctionnedList from "App/modules/moderation/database/models/SanctionnedList";
 import SanctionSave from "App/modules/moderation/database/models/SanctionSave";
-
-
-
-// Ok c'est vraiment pas propre, mais flemme de refaire tout le système pour prendre ça en compte :x
+import { Moderation } from "App/modules/moderation/Moderation";
 
 export class AutomaticSanctionManager {
 
@@ -39,7 +36,7 @@ export class AutomaticSanctionManager {
             debandate: Date.now() + this.duration,
         })
         try {
-            await this.member.roles.add(ConfigManager.getModerationConfiguration().mutedRole)
+            await this.member.roles.add(Moderation.getConfiguration().mutedRole)
         } catch (e) {
 
         }

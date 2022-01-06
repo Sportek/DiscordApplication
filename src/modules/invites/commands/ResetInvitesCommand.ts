@@ -46,15 +46,11 @@ export default class ResetInvitesCommand extends BaseCommand {
       await sendEphemeralMessage(interaction, `Vous venez de reset les invitations de **${ member.displayName }**.`, true);
       Logger.send("success", `${ moderator.displayName } vient de supprimer les invitations de ${ member.displayName }.`);
     }
-
-
-    if(interaction.options.getSubcommand() === "all"){
+    if(interaction.options.getSubcommand() === "all") {
       const moderator = interaction.member! as GuildMember;
       await InviteManageData.getInstance().removeAllInvites();
       await sendEphemeralMessage(interaction, "Vous venez de supprimer l'ensemble des invitations.", true);
       Logger.send("success", `${ moderator.displayName } vient de supprimer l'ensemble des invitations.`);
     }
-
-
   }
 }

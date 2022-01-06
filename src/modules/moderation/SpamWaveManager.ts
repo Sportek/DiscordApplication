@@ -2,6 +2,7 @@ import { Snowflake, TextChannel } from "discord.js";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import { Application } from "@sportek/core-next-sportek";
 import Logger from "@leadcodedev/logger";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 export class SpamWaveManager {
 
@@ -20,7 +21,7 @@ export class SpamWaveManager {
 
   public resetChannelsInfo() {
     setInterval(async () => {
-      const editChannels = this.channelsInfo.filter(value => value.message <= ConfigManager.getModerationConfiguration().limitMessagePerMinute / 2);
+      const editChannels = this.channelsInfo.filter(value => value.message <= Moderation.getConfiguration().limitMessagePerMinute / 2);
       for (const value of editChannels) {
         const channel = await Application.getClient().channels.fetch(value.channelid) as TextChannel;
         let newTimeIndex = this.time.indexOf(channel.rateLimitPerUser) - 1

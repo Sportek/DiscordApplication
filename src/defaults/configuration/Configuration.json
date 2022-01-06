@@ -1,0 +1,27 @@
+{
+    "suggestions": {
+        "channel": "926884076428877874"
+    },
+    "memberCount": {
+        "channel": "926334516874862632",
+        "message": "\uD83D\uDCCA Bienvenue | Membres: {memberCount}"
+    },
+    "instance": {
+        "version": "1.0"
+    },
+    "defaultEmbed": {
+        "color": "invisible",
+        "footer": "Krolax © 2022"
+    },
+    "guild": {
+        "id": "926334516241518652",
+        "roles": {
+            "administration": [
+                "927653010757255218"
+            ],
+            "moderation": [
+                "927653026645286923"
+            ]
+        }
+    }
+}

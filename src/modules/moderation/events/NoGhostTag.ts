@@ -2,12 +2,13 @@ import { Message } from "discord.js";
 import { BaseEvent, Event } from "@sportek/core-next-sportek";
 import { ConfigManager } from "App/defaults/ConfigManager";
 import { WarningCollection } from "App/modules/moderation/collections/WarningCollection";
+import { Moderation } from "App/modules/moderation/Moderation";
 
 
 @Event('messageCreate')
 export default class NoGhostTag implements BaseEvent {
 	public async run(message: Message): Promise<void> {
-		if(!ConfigManager.getModerationConfiguration().automaticSanctions.ghostTags.enable) return;
+		if(!Moderation.getConfiguration().automaticSanctions.ghostTags.enable) return;
 		if(message.channel.type === "DM") return;
 		if(!message.mentions.users.first()) return;
 		if(message.author.bot) return;

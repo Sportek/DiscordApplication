@@ -22,8 +22,8 @@ export default class Clear extends BaseCommand {
   // @ts-ignore
   public async run(interaction: CommandInteraction): Promise<void> {
     const count = interaction.options.getNumber("nombre")!;
-    if(count < 1 || count > 100){
-      await sendEphemeralMessage(interaction, "Vous devez indiquer un nombre entre 1 et 100.", false)
+    if(count < 1 || count > 99){
+      await sendEphemeralMessage(interaction, "Vous devez indiquer un nombre entre 1 et 99.", false)
       return;
     }
 
