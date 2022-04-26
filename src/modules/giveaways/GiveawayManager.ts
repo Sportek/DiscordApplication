@@ -156,34 +156,36 @@ export class GiveawayManager {
     }
 
     const channel = Application.getClient()!.guilds.resolve(giveaway.guildid)!.channels.resolve(giveaway.channelid) as unknown as TextChannel;
-    const message = channel.messages.resolve(giveaway.messageid);
+    try {
+      const message = await channel.messages.fetch(giveaway.messageid);
+      if(!message) {
+        const data = await GiveawayData.where("messageid", messageid) as GiveawayData[]
+        data.forEach(value => value.delete());
+        Logger.send("error", `une erreur est survenue lors du giveaway #3 ${ messageid }, delete du giveaway.`)
+        return;
+      }
+      const rewardFormated = GiveawayManager.getInstance().formatRewards(giveaway.reward)
 
+      const embed = await this.getGivewayDefaultEmbed(message);
+      embed.setDescription(embed.description + `\n\n**Gagnants:** ${ winnerString }`)
 
-    if(!message) {
-      const data = await GiveawayData.where("messageid", messageid) as GiveawayData[]
-      data.forEach(value => value.delete());
-      Logger.send("error", `une erreur est survenue lors du giveaway #3 ${ messageid }, delete du giveaway.`)
-      return;
+      const button = new MessageActionRow()
+        .addComponents(new MessageButton()
+          .setStyle("DANGER")
+          .setLabel("GiveawayObject terminé")
+          .setDisabled(true)
+          .setEmoji("⚠")
+          .setCustomId("entendGiveaway"))
+
+      await message.edit({embeds: [embed], components: [button]});
+
+      await this.deleteGiveaway(giveaway.messageid);
+
+      Logger.send("success", `Lancement du giveaway avec l'id de message: ${ messageid }`);
+      Logger.send("success", "Les gagnants sont: " + winnersID.toString())
+    } catch (e) {
+      Logger.send("error", "Giveaway error : Impossible de trouver le message.");
     }
-    const rewardFormated = GiveawayManager.getInstance().formatRewards(giveaway.reward)
-
-    const embed = await this.getGivewayDefaultEmbed(message);
-    embed.setDescription(embed.description + `\n\n**Gagnants:** ${ winnerString }`)
-
-    const button = new MessageActionRow()
-      .addComponents(new MessageButton()
-        .setStyle("DANGER")
-        .setLabel("GiveawayObject terminé")
-        .setDisabled(true)
-        .setEmoji("⚠")
-        .setCustomId("entendGiveaway"))
-
-    await message.edit({embeds: [embed], components: [button]});
-
-    await this.deleteGiveaway(giveaway.messageid);
-
-    Logger.send("success", `Lancement du giveaway avec l'id de message: ${ messageid }`);
-    Logger.send("success", "Les gagnants sont: " + winnersID.toString())
   }
 
 
