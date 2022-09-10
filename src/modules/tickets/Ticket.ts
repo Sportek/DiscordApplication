@@ -1,4 +1,4 @@
-import TicketConfiguration from "App/modules/ranking/configuration/Configuration.json";
+import TicketConfiguration from "App/modules/tickets/configuration/Configuration.json";
 import { InterfaceTicketConfiguration } from "App/modules/tickets/InterfaceTicketConfiguration";
 
 export class Ticket {

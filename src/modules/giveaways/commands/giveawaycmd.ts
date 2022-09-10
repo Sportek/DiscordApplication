@@ -112,6 +112,7 @@ import Logger from "@leadcodedev/logger";
   },
 })
 export default class Giveawaycmd extends BaseCommand {
+  // @ts-ignore
   public async run(interaction: CommandInteraction): Promise<void> {
     if(interaction.options.getSubcommand() === "add") {
       const winners = interaction.options.getNumber("gagnants")!
