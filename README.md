@@ -2,6 +2,10 @@
 
 Repository d'un bot discord en _discord.js v13_ utilisant discord factory (un framework simplifiant la création de bot discord qui a été modifié par mes soins).
 
+Le code est loin d'être formidable, il a été fait il y a longtemps, c'est fort probable qu'il y ait certains soucis qui devront être réglé de votre côté, mais ça reste une très bonne base, qui a été utilisée sur plusieurs discord.
+
+Dans le cas où vous utilisez ce bot, je souhaiterais que vous laissiez la commande [Credit](https://github.com/Sportek/DiscordApplication/blob/main/src/defaults/commands/Credit.ts) intacte, ou au moins me laisser en tant que créateur. 
+
 Les différents modules disponibles : 
 
 > ### Basics
