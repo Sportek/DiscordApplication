@@ -6,7 +6,7 @@ import { Application } from "@sportek/core-next-sportek";
 export default class StatusUpdate extends BaseEvent {
   public async run (any : any): Promise<void> {
     Application.getClient()!.user!.setPresence({
-      activities: [{name: "CandyFight", type: "PLAYING"}], status: "online",
+      activities: [{name: "par Sportek", type: "PLAYING"}], status: "online",
     })
   }
 }
