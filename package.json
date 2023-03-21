@@ -31,7 +31,6 @@
     "@discord-factory/storage-next": "^2.3.0",
     "@leadcodedev/logger": "^1.0.0",
     "@sportek/core-next-sportek": "^1.0.21",
-    "canvas": "^2.8.0",
     "discord.js": "^13.3.1",
     "font-list": "^1.4.3",
     "module-alias": "^2.2.2",
